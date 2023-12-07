@@ -10,12 +10,6 @@ def main():
     if choice != "Home":
         st.session_state.page = choice
 
-    menu = ["Home", "Login", "Register"]
-    if "page" in st.session_state and st.session_state.page == "Register":
-        choice = "Register"
-        st.session_state.page = ""
-    else:
-        choice = st.sidebar.selectbox("Menu", menu)
 
     if choice == "Home":
         st.subheader("Home")
