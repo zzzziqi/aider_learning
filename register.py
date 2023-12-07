@@ -18,9 +18,10 @@ def main():
 import time
 
                 st.success("User {} has been successfully registered.".format(username))
-                time.sleep(2)
-                st.session_state.page = "Login"
-                st.experimental_rerun()
+                st.session_state.register_time = time.time()
+                if 'register_time' in st.session_state and time.time() - st.session_state.register_time > 2:
+                    st.session_state.page = "Login"
+                    st.experimental_rerun()
         else:
             st.error("Error: Passwords do not match")
 
