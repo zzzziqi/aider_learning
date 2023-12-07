@@ -11,7 +11,10 @@ def main():
     st.title("Home Page")
     
     pages = ["Home", "Login", "Register"]
-    st.session_state.page = st.sidebar.selectbox("Navigation", pages, key="navigation_selectbox")
+    page = st.sidebar.selectbox("Navigation", pages, key="navigation_selectbox")
+    st.session_state.page = page
+    if page != st.session_state.page:
+        st.experimental_rerun()
 
 
     if st.session_state.page == "Home":
