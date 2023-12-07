@@ -1,5 +1,5 @@
 import streamlit as st
-from database import add_user
+from database import add_user, user_exists_by_name
 
 def main():
     st.title("Registration Page")
@@ -11,8 +11,11 @@ def main():
 
     if st.button("Register", key="register_submit_button"):
         if password == confirm_password:
-            add_user(username, password)
-            st.success("User {} has been successfully registered.".format(username))
+            if user_exists_by_name(username):
+                st.error("Error: Username already exists")
+            else:
+                add_user(username, password)
+                st.success("User {} has been successfully registered.".format(username))
         else:
             st.error("Error: Passwords do not match")
 
