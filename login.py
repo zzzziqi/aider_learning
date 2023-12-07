@@ -11,6 +11,7 @@ def main():
     if col1.button("Login", key="login_submit_button"):
         if user_exists(username, password):
             st.success("Logged in as {}".format(username))
+            st.write(f"Welcome, {username}!")
         else:
             st.error("Invalid username or password")
     if col2.button("Register", key="login_register_button"):
