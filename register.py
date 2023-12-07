@@ -1,4 +1,5 @@
 import streamlit as st
+import time
 from database import add_user, user_exists_by_name
 
 def main():
@@ -15,7 +16,6 @@ def main():
                 st.error("Error: Username already exists")
             else:
                 add_user(username, email, password)
-import time
 
                 st.success("User {} has been successfully registered.".format(username))
                 time.sleep(2)
