@@ -35,7 +35,7 @@ def main():
         register_main()
 
     if not user_exists_by_name("zzq"):
-        add_user("zzq", "qqz")
+        add_user("zzq", "", "qqz")
 
 if __name__ == "__main__":
     main()
