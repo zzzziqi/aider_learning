@@ -1,4 +1,5 @@
 import streamlit as st
+from aider.database import add_user
 
 def main():
     st.title("Registration Page")
@@ -10,6 +11,7 @@ def main():
 
     if st.button("Register", key="register_submit_button"):
         if password == confirm_password:
+            add_user(username, password)
             st.success("User {} has been successfully registered.".format(username))
         else:
             st.error("Error: Passwords do not match")
