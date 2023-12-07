@@ -12,7 +12,7 @@ def main():
             st.experimental_rerun()
     else:
         username = st.text_input("Username/Email")
-        password = st.text_input("Password", type='password')
+        password = st.text_input("Password", type='password', key="login_password")
 
         col1, col2 = st.columns(2)
         if col1.button("Login", key="login_submit_button"):
