@@ -15,7 +15,10 @@ def main():
                 st.error("Error: Username already exists")
             else:
                 add_user(username, email, password)
+import time
+
                 st.success("User {} has been successfully registered.".format(username))
+                time.sleep(2)
                 st.session_state.page = "Login"
                 st.experimental_rerun()
         else:
