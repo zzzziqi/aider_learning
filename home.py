@@ -21,6 +21,10 @@ def main():
     if st.sidebar.button("Register"):
         st.session_state.page = "Register"
         st.experimental_rerun()
+    if 'username' in st.session_state:
+        if st.sidebar.button("Welcome"):
+            st.session_state.page = "Welcome"
+            st.experimental_rerun()
 
     if st.session_state.page == "Home":
         st.subheader("Home")
