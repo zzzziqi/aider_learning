@@ -4,7 +4,7 @@ def main():
     st.title("Registration Page")
     
     menu = ["Home", "Login", "Register"]
-    choice = st.sidebar.selectbox("Menu", menu)
+    choice = st.sidebar.selectbox("Menu", menu, key="register_page_selectbox")
     if choice != "Register":
         st.session_state.page = choice
     username = st.text_input("Username")

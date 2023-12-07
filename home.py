@@ -6,7 +6,7 @@ def main():
     st.title("Home Page")
     
     menu = ["Home", "Login", "Register"]
-    choice = st.sidebar.selectbox("Menu", menu)
+    choice = st.sidebar.selectbox("Menu", menu, key="home_page_selectbox")
     if choice != "Home":
         st.session_state.page = choice
 

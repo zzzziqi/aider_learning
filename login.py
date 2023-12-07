@@ -4,7 +4,7 @@ def main():
     st.title("Login Page")
     
     menu = ["Home", "Login", "Register"]
-    choice = st.sidebar.selectbox("Menu", menu)
+    choice = st.sidebar.selectbox("Menu", menu, key="login_page_selectbox")
     if choice != "Login":
         st.session_state.page = choice
     username = st.text_input("Username/Email")
