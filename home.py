@@ -7,8 +7,6 @@ from database import create_connection, get_all_users, user_exists_by_name, add_
 
 def main():
     create_connection()
-    if not user_exists_by_name("zzq"):
-        add_user("zzq", "qqz")
     if "page" not in st.session_state:
         st.session_state.page = "Home"
     st.title("Home Page")
@@ -30,6 +28,9 @@ def main():
         login_main()
     elif st.session_state.page == "Register":
         register_main()
+
+    if not user_exists_by_name("zzq"):
+        add_user("zzq", "qqz")
 
 if __name__ == "__main__":
     main()
