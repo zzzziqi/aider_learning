@@ -24,6 +24,7 @@ def main():
                 st.error("Invalid username or password")
         if col2.button("Register", key="login_register_button"):
             st.session_state.page = "Register"
+            st.session_state.pop('password', None)
             st.experimental_rerun()
 
 if __name__ == "__main__":
