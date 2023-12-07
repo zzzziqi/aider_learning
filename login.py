@@ -5,7 +5,7 @@ def main():
     username = st.text_input("Username/Email")
     password = st.text_input("Password", type='password')
 
-    col1, col2 = st.beta_columns(2)
+    col1, col2 = st.columns(2)
     if col1.button("Login"):
         st.success("Logged in as {}".format(username))
     if col2.button("Register"):
