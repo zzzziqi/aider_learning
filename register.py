@@ -7,7 +7,7 @@ def main():
     
     username = st.text_input("Username")
     email = st.text_input("Email")
-    password = st.text_input("Password", type='password')
+    password = st.text_input("Password", type='password', key="login_password")
     confirm_password = st.text_input("Confirm Password", type='password')
 
     if st.button("Register", key="register_submit_button"):
@@ -20,8 +20,8 @@ def main():
 
                     st.success("User {} has been successfully registered.".format(username))
                     time.sleep(2)
-                    st.session_state.page = "Login"
                     st.session_state.pop('password', None)
+                    st.session_state.page = "Login"
                     st.experimental_rerun()
             else:
                 st.error("Error: Passwords do not match")
