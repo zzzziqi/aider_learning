@@ -17,9 +17,10 @@ def main():
     if st.sidebar.button("Login"):
         st.session_state.page = "Login"
         st.experimental_rerun()
-    if st.sidebar.button("Register"):
-        st.session_state.page = "Register"
-        st.experimental_rerun()
+    if 'username' not in st.session_state:
+        if st.sidebar.button("Register"):
+            st.session_state.page = "Register"
+            st.experimental_rerun()
     if 'username' in st.session_state:
         if st.sidebar.button("Welcome"):
             st.session_state.page = "Welcome"
