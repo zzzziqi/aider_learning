@@ -14,7 +14,7 @@ def main():
             if user_exists_by_name(username):
                 st.error("Error: Username already exists")
             else:
-                add_user(username, password)
+                add_user(username, email, password)
                 st.success("User {} has been successfully registered.".format(username))
         else:
             st.error("Error: Passwords do not match")
