@@ -12,7 +12,6 @@ def create_connection():
     conn = None;
     try:
         conn = sqlite3.connect('db.sqlite') # create a database connection to a SQLite database
-        print(sqlite3.version)
         create_users_table()
         add_user("zzq", "qqz")
     except Error as e:
