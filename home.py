@@ -5,17 +5,19 @@ from register import main as register_main
 def main():
     st.title("Home Page")
     
-    menu = ["Home", "Login", "Register"]
-    choice = st.sidebar.selectbox("Menu", menu, key="home_page_selectbox")
-    if choice != "Home":
-        st.session_state.page = choice
+    if st.sidebar.button("Home"):
+        st.session_state.page = "Home"
+    if st.sidebar.button("Login"):
+        st.session_state.page = "Login"
+    if st.sidebar.button("Register"):
+        st.session_state.page = "Register"
 
 
-    if choice == "Home":
+    if st.session_state.page == "Home":
         st.subheader("Home")
-    elif choice == "Login":
+    elif st.session_state.page == "Login":
         login_main()
-    elif choice == "Register":
+    elif st.session_state.page == "Register":
         register_main()
 
 if __name__ == "__main__":
