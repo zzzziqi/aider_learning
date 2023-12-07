@@ -22,7 +22,8 @@ def main():
     if st.session_state.page == "Home":
         st.subheader("Home")
         if 'username' in st.session_state:
-            st.write(f"You are logged in as {st.session_state.username}")
+            email = get_user_email(st.session_state.username)
+            st.write(f"You are logged in as {st.session_state.username}, Email: {email}")
         else:
             st.write("You are not logged in.")
         users = get_all_users()

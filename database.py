@@ -49,3 +49,11 @@ def get_all_users():
     rows = cur.fetchall()
     conn.close()
     return rows
+
+def get_user_email(username):
+    conn = sqlite3.connect('db.sqlite')
+    cur = conn.cursor()
+    cur.execute("SELECT email FROM users WHERE username = ?", (username,))
+    row = cur.fetchone()
+    conn.close()
+    return row[0] if row else ""
