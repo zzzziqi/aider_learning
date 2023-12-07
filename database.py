@@ -4,7 +4,7 @@ from sqlite3 import Error
 def create_users_table():
     conn = sqlite3.connect('db.sqlite')
     cur = conn.cursor()
-    cur.execute("CREATE TABLE IF NOT EXISTS users (username TEXT, password TEXT)")
+    cur.execute("CREATE TABLE IF NOT EXISTS users (username TEXT, email TEXT, password TEXT)")
     conn.commit()
     conn.close()
 
@@ -19,17 +19,17 @@ def create_connection():
         if conn:
             conn.close()
 
-def add_user(username, password):
+def add_user(username, email, password):
     conn = sqlite3.connect('db.sqlite')
     cur = conn.cursor()
-    cur.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, password))
+    cur.execute("INSERT INTO users (username, email, password) VALUES (?, ?, ?)", (username, email, password))
     conn.commit()
     conn.close()
 
-def user_exists(username, password):
+def user_exists(username, email, password):
     conn = sqlite3.connect('db.sqlite')
     cur = conn.cursor()
-    cur.execute("SELECT * FROM users WHERE username = ? AND password = ?", (username, password))
+    cur.execute("SELECT * FROM users WHERE (username = ? OR email = ?) AND password = ?", (username, email, password))
     rows = cur.fetchall()
     conn.close()
     return len(rows) > 0
