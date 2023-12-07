@@ -1,8 +1,14 @@
 import streamlit as st
 from database import user_exists
 
+def clear_cache():
+    keys = list(st.session_state.keys())
+    for key in keys:
+        st.session_state.pop(key)
+
 def main():
     st.title("Login Page")
+    st.button('Clear Cache', on_click=clear_cache)
     
     if 'username' in st.session_state:
         st.write(f"You are logged in as {st.session_state.username}")
