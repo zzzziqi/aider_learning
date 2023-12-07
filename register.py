@@ -26,6 +26,7 @@ def main():
 
     if st.button("Back to Login", key="back_to_login_button"):
         st.session_state.page = "Login"
+        st.session_state.pop('password', None)
         st.experimental_rerun()
 
 if __name__ == "__main__":
