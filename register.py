@@ -20,9 +20,8 @@ def main():
 
                     st.success("User {} has been successfully registered.".format(username))
                     time.sleep(2)
-                    st.session_state.pop('password', None)
+                    st.session_state.clear()
                     st.session_state.page = "Login"
-                    st.session_state.pop('password', None)
                     st.experimental_rerun()
             else:
                 st.error("Error: Passwords do not match")
