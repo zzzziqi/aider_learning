@@ -5,11 +5,11 @@ from register import main as register_main
 def main():
     st.title("Home Page")
     
-    if st.sidebar.button("Home"):
+    if st.sidebar.button("Home", key="home_button"):
         st.session_state.page = "Home"
-    if st.sidebar.button("Login"):
+    if st.sidebar.button("Login", key="login_button"):
         st.session_state.page = "Login"
-    if st.sidebar.button("Register"):
+    if st.sidebar.button("Register", key="register_button"):
         st.session_state.page = "Register"
 
 
