@@ -24,5 +24,9 @@ def main():
         else:
             st.error("Error: Passwords do not match")
 
+    if st.button("Back to Login", key="back_to_login_button"):
+        st.session_state.page = "Login"
+        st.experimental_rerun()
+
 if __name__ == "__main__":
     main()
