@@ -16,8 +16,7 @@ def main():
             st.error("Invalid username or password")
     else:
         st.write("You are not logged in.")
-        else:
-            st.error("Invalid username or password")
+        st.error("Invalid username or password")
     if col2.button("Register", key="login_register_button"):
         st.session_state.page = "Register"
         st.experimental_rerun()
