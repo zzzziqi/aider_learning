@@ -10,12 +10,8 @@ def main():
         st.session_state.page = "Home"
     st.title("Home Page")
     
-    if st.sidebar.button("Home", key="home_button"):
-        st.session_state.page = "Home"
-    if st.sidebar.button("Login", key="login_button"):
-        st.session_state.page = "Login"
-    if st.sidebar.button("Register", key="register_button"):
-        st.session_state.page = "Register"
+    pages = ["Home", "Login", "Register"]
+    st.session_state.page = st.sidebar.selectbox("Navigation", pages, key="navigation_selectbox")
 
 
     if st.session_state.page == "Home":
