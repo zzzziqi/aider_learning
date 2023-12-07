@@ -10,7 +10,6 @@ def main():
     create_connection()
     if "page" not in st.session_state:
         st.session_state.page = "Home"
-    st.title("Home Page")
 
     if st.sidebar.button("Home"):
         st.session_state.page = "Home"
@@ -27,6 +26,7 @@ def main():
             st.experimental_rerun()
 
     if st.session_state.page == "Home":
+        st.title("Home Page")
         st.subheader("Home")
         if 'username' in st.session_state:
             email = get_user_email(st.session_state.username)
