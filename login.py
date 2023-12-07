@@ -3,9 +3,9 @@ from database import user_exists
 
 def main():
     st.title("Login Page")
-    st.write("Username: " + username)
     
     username = st.text_input("Username/Email")
+    st.write("Username: " + username)
     password = st.text_input("Password", type='password')
 
     col1, col2 = st.columns(2)
