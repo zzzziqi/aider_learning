@@ -4,6 +4,7 @@ from database import user_exists
 def main():
     st.title("Login Page")
     
+    st.write("You are not logged in.")
     username = st.text_input("Username/Email")
     password = st.text_input("Password", type='password')
 
