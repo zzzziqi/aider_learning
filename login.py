@@ -16,12 +16,15 @@ def main():
 
         col1, col2 = st.columns(2)
         if col1.button("Login", key="login_submit_button"):
-            if user_exists(username, password):
-                st.session_state.username = username
-                st.session_state.page = "Welcome"
-                st.experimental_rerun()
+            if username and password:
+                if user_exists(username, password):
+                    st.session_state.username = username
+                    st.session_state.page = "Welcome"
+                    st.experimental_rerun()
+                else:
+                    st.error("Invalid username or password")
             else:
-                st.error("Invalid username or password")
+                st.error("All fields are required.")
         if col2.button("Register", key="login_register_button"):
             st.session_state.page = "Register"
             st.session_state.pop('password', None)
