@@ -26,10 +26,10 @@ def add_user(username, email, password):
     conn.commit()
     conn.close()
 
-def user_exists(username, email, password):
+def user_exists(username_or_email, password):
     conn = sqlite3.connect('db.sqlite')
     cur = conn.cursor()
-    cur.execute("SELECT * FROM users WHERE (username = ? OR email = ?) AND password = ?", (username, email, password))
+    cur.execute("SELECT * FROM users WHERE (username = ? OR email = ?) AND password = ?", (username_or_email, username_or_email, password))
     rows = cur.fetchall()
     conn.close()
     return len(rows) > 0
