@@ -33,6 +33,9 @@ def main():
             st.write(f"Username: {user[0]}, Email: {user[1]}, Password: {user[2]}")
     elif st.session_state.page == "Login":
         login_main()
+    elif st.session_state.page == "Welcome":
+        st.subheader("Welcome")
+        st.write(f"Hello {st.session_state.username}")
     elif st.session_state.page == "Register":
         register_main()
 
