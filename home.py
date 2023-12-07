@@ -35,7 +35,7 @@ def main():
             st.write("You are not logged in.")
         users = get_all_users()
         for user in users:
-            st.write(f"Username: {user[0]}, Email: {user[1]}, Password: {user[2]}")
+            st.write(f"Username: {user[0]}, Email: {user[1]}")
     elif st.session_state.page == "Login":
         login_main()
 
