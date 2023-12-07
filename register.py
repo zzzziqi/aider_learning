@@ -7,7 +7,7 @@ def main():
     
     username = st.text_input("Username")
     email = st.text_input("Email")
-    password = st.text_input("Password", type='password', key="login_password")
+    password = st.text_input("Password", type='password', key="register_password")
     confirm_password = st.text_input("Confirm Password", type='password')
 
     if st.button("Register", key="register_submit_button"):
