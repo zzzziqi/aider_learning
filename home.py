@@ -35,8 +35,8 @@ def main():
         login_main()
 from welcome import main as welcome_main
 
-    elif st.session_state.page == "Welcome":
-        welcome_main()
+elif st.session_state.page == "Welcome":
+    welcome_main()
     elif st.session_state.page == "Register":
         register_main()
 
