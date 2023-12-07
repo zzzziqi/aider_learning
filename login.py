@@ -10,8 +10,7 @@ def main():
     if col1.button("Login"):
         st.success("Logged in as {}".format(username))
     if col2.button("Register"):
-        state = session_state.get(page="")
-        state.page = "Register"
+        st.session_state.page = "Register"
 
 if __name__ == "__main__":
     main()

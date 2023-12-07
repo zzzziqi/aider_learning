@@ -7,10 +7,9 @@ def main():
     st.title("Home Page")
 
     menu = ["Home", "Login", "Register"]
-    state = session_state.get(page="")
-    if state.page == "Register":
+    if "page" in st.session_state and st.session_state.page == "Register":
         choice = "Register"
-        state.page = ""
+        st.session_state.page = ""
     else:
         choice = st.sidebar.selectbox("Menu", menu)
 
