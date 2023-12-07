@@ -1,7 +1,7 @@
 import streamlit as st
 from login import main as login_main
 from register import main as register_main
-from database import create_connection
+from database import create_connection, get_all_users
 
 def main():
     create_connection()
@@ -19,6 +19,9 @@ def main():
 
     if st.session_state.page == "Home":
         st.subheader("Home")
+        users = get_all_users()
+        for user in users:
+            st.write(f"Username: {user[0]}, Password: {user[1]}")
     elif st.session_state.page == "Login":
         login_main()
     elif st.session_state.page == "Register":
