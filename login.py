@@ -1,5 +1,5 @@
 import streamlit as st
-from aider.database import user_exists
+from database import user_exists
 
 def main():
     st.title("Login Page")
