@@ -16,6 +16,8 @@ def main():
             else:
                 add_user(username, email, password)
                 st.success("User {} has been successfully registered.".format(username))
+                st.session_state.page = "Login"
+                st.experimental_rerun()
         else:
             st.error("Error: Passwords do not match")
 
