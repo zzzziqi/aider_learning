@@ -5,7 +5,10 @@ def main():
     st.title("Login Page")
     
     username = st.text_input("Username/Email")
-    st.write("Username: " + username)
+    if 'username' in st.session_state:
+        st.write(f"You are logged in as {st.session_state.username}")
+    else:
+        st.write("Username: " + username)
     password = st.text_input("Password", type='password')
 
     col1, col2 = st.columns(2)
