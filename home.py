@@ -1,7 +1,6 @@
 import streamlit as st
 from login import main as login_main
 from register import main as register_main
-from database import create_connection, get_all_users
 
 from database import create_connection, get_all_users, user_exists_by_name, add_user, get_user_email
 
