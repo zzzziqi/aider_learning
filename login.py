@@ -12,6 +12,7 @@ def main():
     if col1.button("Login", key="login_submit_button"):
         if user_exists(username, password):
             st.success("You have logged in as {}".format(username))
+            st.session_state.username = username
             st.write(f"Welcome, {username}!")
         else:
             st.error("Invalid username or password")
