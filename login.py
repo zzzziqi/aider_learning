@@ -5,9 +5,10 @@ def main():
     username = st.text_input("Username/Email")
     password = st.text_input("Password", type='password')
 
-    if st.button("Login"):
+    col1, col2 = st.beta_columns(2)
+    if col1.button("Login"):
         st.success("Logged in as {}".format(username))
-    if st.button("Register"):
+    if col2.button("Register"):
         st.info("Please go to the Register page to create an account.")
 
 if __name__ == "__main__":
