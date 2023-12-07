@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit_session_state as session_state
 
 def main():
     st.title("Login Page")
@@ -9,7 +10,8 @@ def main():
     if col1.button("Login"):
         st.success("Logged in as {}".format(username))
     if col2.button("Register"):
-        st.info("Please go to the Register page to create an account.")
+        state = session_state.get(page="")
+        state.page = "Register"
 
 if __name__ == "__main__":
     main()
