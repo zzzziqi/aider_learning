@@ -4,6 +4,11 @@ from register import main as register_main
 
 def main():
     st.title("Home Page")
+    
+    menu = ["Home", "Login", "Register"]
+    choice = st.sidebar.selectbox("Menu", menu)
+    if choice != "Home":
+        st.session_state.page = choice
 
     menu = ["Home", "Login", "Register"]
     if "page" in st.session_state and st.session_state.page == "Register":
