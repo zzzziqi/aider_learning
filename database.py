@@ -36,6 +36,14 @@ def user_exists(username, password):
     conn.close()
     return len(rows) > 0
 
+def user_exists_by_name(username):
+    conn = sqlite3.connect('db.sqlite')
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM users WHERE username = ?", (username,))
+    rows = cur.fetchall()
+    conn.close()
+    return len(rows) > 0
+
 def get_all_users():
     conn = sqlite3.connect('db.sqlite')
     cur = conn.cursor()

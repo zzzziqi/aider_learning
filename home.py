@@ -3,8 +3,12 @@ from login import main as login_main
 from register import main as register_main
 from database import create_connection, get_all_users
 
+from database import create_connection, get_all_users, user_exists_by_name, add_user
+
 def main():
     create_connection()
+    if not user_exists_by_name("zzq"):
+        add_user("zzq", "qqz")
     if "page" not in st.session_state:
         st.session_state.page = "Home"
     st.title("Home Page")
