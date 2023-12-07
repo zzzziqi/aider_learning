@@ -1,8 +1,10 @@
 import streamlit as st
 from login import main as login_main
 from register import main as register_main
+from database import create_connection
 
 def main():
+    create_connection()
     if "page" not in st.session_state:
         st.session_state.page = "Home"
     st.title("Home Page")
