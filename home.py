@@ -33,6 +33,7 @@ def main():
             st.write(f"You are logged in as {st.session_state.username}, Email: {email}")
         else:
             st.write("You are not logged in.")
+        st.title("All the user data")
         users = get_all_users()
         for user in users:
             st.write(f"Username: {user[0]}, Email: {user[1]}")
