@@ -1,5 +1,4 @@
 import streamlit as st
-import streamlit_session_state as session_state
 from login import main as login_main
 from register import main as register_main
 

@@ -1,5 +1,4 @@
 import streamlit as st
-import streamlit_session_state as session_state
 
 def main():
     st.title("Login Page")
