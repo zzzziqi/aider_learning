@@ -28,14 +28,14 @@ def main():
             st.write("You are not logged in.")
         users = get_all_users()
         for user in users:
-            st.write(f"Username: {user[0]}, Password: {user[1]}")
+            st.write(f"Username: {user[0]}, Email: {user[1]}, Password: {user[2]}")
     elif st.session_state.page == "Login":
         login_main()
     elif st.session_state.page == "Register":
         register_main()
 
     if not user_exists_by_name("zzq"):
-        add_user("zzq", "", "qqz")
+        add_user("zzq", "zzq@qq.com", "qqz")
 
 if __name__ == "__main__":
     main()
