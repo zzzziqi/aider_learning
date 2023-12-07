@@ -11,7 +11,6 @@ def main():
             st.experimental_rerun()
     else:
         username = st.text_input("Username/Email")
-        st.write("Username: " + username)
         password = st.text_input("Password", type='password')
 
         col1, col2 = st.columns(2)
