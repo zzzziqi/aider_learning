@@ -11,6 +11,7 @@ def main():
         st.success("Logged in as {}".format(username))
     if col2.button("Register", key="login_register_button"):
         st.session_state.page = "Register"
+        st.experimental_rerun()
 
 if __name__ == "__main__":
     main()
