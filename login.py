@@ -29,6 +29,8 @@ def main():
             st.session_state.page = "Register"
             st.session_state.pop('password', None)
             st.experimental_rerun()
+        else:
+            st.session_state.pop('password', None)
 
 if __name__ == "__main__":
     main()
