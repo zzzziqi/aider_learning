@@ -8,6 +8,7 @@ def main():
         st.write(f"You are logged in as {st.session_state.username}")
         if st.button("Logout", key="logout_button"):
             st.session_state.clear()
+            st.session_state.page = "Login"
             st.experimental_rerun()
     else:
         username = st.text_input("Username/Email")
