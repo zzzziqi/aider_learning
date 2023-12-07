@@ -4,15 +4,18 @@ from database import user_exists
 def main():
     st.title("Login Page")
     
-    st.write("You are not logged in.")
     username = st.text_input("Username/Email")
     password = st.text_input("Password", type='password')
 
     col1, col2 = st.columns(2)
     if col1.button("Login", key="login_submit_button"):
         if user_exists(username, password):
-            st.success("Logged in as {}".format(username))
+            st.success("You have logged in as {}".format(username))
             st.write(f"Welcome, {username}!")
+        else:
+            st.error("Invalid username or password")
+    else:
+        st.write("You are not logged in.")
         else:
             st.error("Invalid username or password")
     if col2.button("Register", key="login_register_button"):
